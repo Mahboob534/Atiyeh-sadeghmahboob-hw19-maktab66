@@ -1,0 +1,8 @@
+@mixin box($color) {
+    box-shadow: 0 4px 8px 0 $color;
+    border-radius: 5px;
+}
+@mixin contentdiv(){
+    margin: 0 auto;
+    margin-bottom: 16px ;
+}

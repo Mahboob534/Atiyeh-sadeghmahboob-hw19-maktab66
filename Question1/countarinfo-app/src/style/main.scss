@@ -1,0 +1,51 @@
+@import 'mixin';
+@import 'header';
+@import 'input';
+@import 'card';
+
+
+.countainer{
+     @include contentdiv();
+}
+.button{
+ padding:2px 8px;
+  color: #4b5563;
+  @include box(rgba(242, 237, 236,0.2))
+}
+.row{
+    display:flex;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-Right: 0;
+    img{
+         width: 50%;
+        padding-right: 8px
+    }
+}
+.col-2{
+     padding: 8px;
+     h2{
+         font-family: 500;
+          margin-bottom: 8px; 
+          font-size: 16px;
+     }
+}
+.grids{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20 4;
+
+}
+
+
+
+
+
+
+
+
+.link{
+    text-decoration: none;
+    color:black;
+    
+  }

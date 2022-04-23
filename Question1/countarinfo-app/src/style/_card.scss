@@ -1,0 +1,40 @@
+@import 'mixin';
+.card{
+  @include box(rgba(0,0,0,0.6));
+    border:2px solid white ;
+    width:250px;
+    height: 300px;
+    margin:5% 1%;
+   transition:0.4s ;
+    font-size: 16px;
+    
+ img{
+    width:250px;
+     height:100px;
+     margin:0;
+ }
+ .description{
+ display: "flex"!important;
+  align-items:'center';
+  margin:1% !important;
+  h6  {
+    display: inline !important;
+    font-size: 1rem;
+  }
+ }
+&:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+}
+
+}
+.main{
+  
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap:wrap;
+    justify-content: center;
+  div{
+     flex-basis: 22%;
+     justify-Items: center
+  }
+}

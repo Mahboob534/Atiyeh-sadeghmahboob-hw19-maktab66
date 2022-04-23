@@ -1,0 +1,24 @@
+@import 'mixin';
+.inputdiv{
+    display:flex;
+    @include contentdiv()
+  }
+  .iconsearch{
+    position:absolute;
+    margin-left:24%;
+    padding-top: 15px;
+  }
+  .inputsearch{
+    padding:2px;
+    padding-left:10px;
+    @include box(rgba(0,0,0,0.6));
+    width:25%
+  }
+  .selectclass{
+    margin-left: auto;
+      margin-top: 10%;
+    margin-bottom:2px;
+    padding :15px;
+    @include box(rgba(0,0,0,0.6));
+  }
+ 

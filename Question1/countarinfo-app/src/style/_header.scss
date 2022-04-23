@@ -1,0 +1,17 @@
+@import 'mixin';
+.header{
+        width: 100%;
+        @include box(rgba(231, 231, 236,0.8));
+        margin-bottom: 10%;
+        background: #f3f4f6;
+        height: 6vh;
+        padding:2% 0%;
+        
+    h1{
+        font-family: 500;
+         font-size: large;
+         padding:0 1%;
+    }
+    
+    
+}
