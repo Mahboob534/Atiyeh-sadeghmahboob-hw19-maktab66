@@ -21,7 +21,7 @@ export default function Categories({
   return (
     <>
       <h2>{title}</h2>
-      <List sx={{ width:500, maxWidth: 600, bgcolor: "background.paper" }}>
+      <List component="ul" sx={{ width:500, maxWidth: 600, bgcolor: "background.paper" }}>
         {items.map((item) => {
           return (
             <ListItem
@@ -45,3 +45,5 @@ export default function Categories({
     </>
   );
 }
+
+

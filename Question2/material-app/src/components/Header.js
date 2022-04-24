@@ -34,9 +34,7 @@ export default function Header({ itemArray, setItemArray }) {
             </InputLabel>
             MATERIAL UI
           </Typography>
-         
-          
-          
+       
           <Button variant="contained"><Link to='/Login'>Login</Link></Button>
           <Button variant="contained"> <Link to='/Dashbord'>Dashbord</Link> </Button>
           <Button

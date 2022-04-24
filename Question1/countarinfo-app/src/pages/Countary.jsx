@@ -1,45 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { GetCountary } from "../components/GetCountary";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { InfoContext } from "../context/CountaryInfo";
 
 export default function Countary() {
   let params = useParams();
-  let countary = GetCountary(params.name);
+
+  let countaryFromParams = GetCountary(params.name);
+
   const { countariesInfo, setCountariesInfo } = useContext(InfoContext);
+
+  const [countary, setCountry] = useState(countaryFromParams);
+
   const navigate = useNavigate();
+
+  const handleBorder = (bo) => {
+    setCountry(countariesInfo.find((name) => name.alpha3Code == bo));
+  };
 
   return (
     <>
-      <div className='countainer' >
-        <button
-        className='button'
-          onClick={() => navigate(-1)}
-          
-        >
+      <div className="countainer">
+        <button className="button" onClick={() => navigate(-1)}>
           <FaLongArrowAltLeft /> Back
         </button>
       </div>
-      <div className='row'
-       
-      >
-        <img
-          src={countary.flag}
-          
-          alt={countary.name}
-        />
-        <div className='col-2'>
-          <h2
-            
-          >
-            {countary.name}
-          </h2>
-          <div
-            className='grids'
-            
-          >
+      <div className="row">
+        <img src={countary.flag} alt={countary.name} />
+        <div className="col-2">
+          <h2>{countary.name}</h2>
+          <div className="grids">
             <p>
               Native Name: <span>{countary.nativeName}</span>
             </p>
@@ -73,7 +65,14 @@ export default function Countary() {
               Border Countries:
               <span>
                 {countary.borders ? (
-                  countary.borders.map((border) => <button>{border}</button>)
+                  countary.borders.map((border) => (
+                    <button
+                      className="button"
+                      onClick={() => handleBorder(border)}
+                    >
+                      {border}
+                    </button>
+                  ))
                 ) : (
                   <label> Not Border</label>
                 )}{" "}

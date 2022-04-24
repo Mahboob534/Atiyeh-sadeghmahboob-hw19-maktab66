@@ -56,12 +56,12 @@ export default function Home() {
     setFlagEdit(true);
   }
 
-  function hanadleBtn(index) {
-    // setItemArray(itemArray.filter((item)=> item.id != index.id))
-    // setItemArray([...itemArray,index])
-    // setFlagEdit(false);
-  }
-  console.log(showNavigateBtn);
+  // function hanadleBtn(index) {
+  //   // setItemArray(itemArray.filter((item)=> item.id != index.id))
+  //   // setItemArray([...itemArray,index])
+  //   // setFlagEdit(false);
+  // }
+  // console.log(showNavigateBtn);
 
   return (
    <>
@@ -88,7 +88,9 @@ export default function Home() {
             selectedItem={selectedItem}
             flagEdit={flagEdit}
             flagDescription={flagDescription}
-            hanadleEditBtn={hanadleBtn}
+           itemArray={itemArray}
+            setItemArray={setItemArray}
+           
           />
         </Grid>
       </Grid>

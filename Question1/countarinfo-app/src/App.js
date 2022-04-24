@@ -11,12 +11,12 @@ function App() {
       <InfoProvider>
         <Routes>
           <Route path='/' element={<Header/>}>
-            <Route path='' element={<Home/>}/>
+            <Route index={true} element={<Home/>}/>
             <Route path=':name' element={<Countary/>}/>
-
-           
+            {/* <Route path=':border' element={<borderButton/>}/> */}
+            <Route path='/*' element={<notfoundPage/>}/>
           </Route>
-          
+         
         </Routes>
        
       </InfoProvider>

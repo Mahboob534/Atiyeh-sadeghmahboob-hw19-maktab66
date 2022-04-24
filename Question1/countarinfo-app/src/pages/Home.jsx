@@ -2,25 +2,28 @@ import React, { useState, useEffect, useContext } from "react";
 import { InfoContext } from "../context/CountaryInfo";
 import Card from "../components/Card";
 import { FaSearch } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 
 export default function Home() {
   const { countariesInfo, setCountariesInfo } = useContext(InfoContext);
-  const [searched, setSearched] = useState("");
+  
 
   const searchCountry = async term => {
+   
     if(term.length < 3 || term === '') return
-    const res = await fetch(`https://restcountries.com/v2/name/${term}`)
+  
+      const res = await fetch(`https://restcountries.com/v2/name/${term}`)
     const data = await res.json()
-     console.log(data)
+     //console.log(data)
      setCountariesInfo (data)
-}
+   
+  }
  
  
 const filterByRegion = async region => {
   if(region == '') return
   const res = await fetch(`https://restcountries.com/v2/region/${region}`)
-  console.log(res);
+  //console.log(res);
   const data = await res.json()
    setCountariesInfo(data)
 }
@@ -46,7 +49,7 @@ const filterByRegion = async region => {
             Filter by Region
           </option>
           <option value="africa">Africa</option>
-          <option value="america">America</option>
+          <option value="americas">America</option>
           <option value="asia">Asia</option>
           <option value="europe">Europe</option>
           <option value="oceania">Oceania</option>
@@ -56,13 +59,16 @@ const filterByRegion = async region => {
       <div className='main'
         
       >
-        {countariesInfo.map((item) => (
-          <div >
+      
+        { countariesInfo ?
+           countariesInfo.map((item) => (
+          
             <NavLink className="link" to={`${item.name}`}>
-              <Card item={item} />
-            </NavLink>
-          </div>
-        ))}
+              <Card item={item} key={item.id}/>
+            </NavLink>))
+          
+          : <Navigate to='/*'/>
+        }
       </div>
     </div>
   );

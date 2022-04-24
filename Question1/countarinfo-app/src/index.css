@@ -81,11 +81,14 @@ code {
 
   
   .button {
-    padding: 2px 8px;
+       padding: 2px 8px;
     color: #4b5563;
     -webkit-box-shadow: 0 4px 8px 0 rgba(242, 237, 236, 0.2);
             box-shadow: 0 4px 8px 0 rgba(242, 237, 236, 0.2);
     border-radius: 5px;
+    margin-bottom :3% ;
+    margin-left:1%;
+
   }
   
   .row {
@@ -98,7 +101,8 @@ code {
   }
   
   .row img {
-    width: 50%;
+    margin :2%;
+    width: 45%;
     padding-right: 8px;
   }
   
